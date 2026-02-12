@@ -196,7 +196,7 @@ docker-compose down
 
 ## Tips
 
-1. **429** - since this example uses free Ollama cloud model then your might experience 429 errors
+1. **429** – Since this example uses a free Ollama Cloud model, you may occasionally encounter 429 (rate limit) errors during usage.
 2. **Context limits vary** - Local models often have smaller context than Claude
 3. **Restart after config changes**:
    ```bash
