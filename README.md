@@ -204,3 +204,10 @@ docker-compose down
    ```
 4. **Use smaller models for speed** - `llama3.2` is faster than `qwen2.5:32b`
 5. **Snake game** - sample of Claude Code Agent Teams result of: "use agent teams to create a cool snake game"
+
+<video width="600" controls autoplay loop muted>
+<source src=".assets/Snake_Game.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
