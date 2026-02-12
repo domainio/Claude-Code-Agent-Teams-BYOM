@@ -1,0 +1,6 @@
+model_list:
+  - model_name: kimi-k2.5
+    litellm_params:
+      model: ollama/kimi-k2.5:cloud
+      api_base: http://host.docker.internal:11434
+      api_key: "os.environ/OLLAMA_API_KEY"
