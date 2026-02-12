@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snake Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">Snake</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <span class="score-label">Score</span>
+                    <span id="score" class="score-value">0</span>
+                </div>
+                <div class="score-box best-score">
+                    <span class="score-label">Best</span>
+                    <span id="best-score" class="score-value">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+            <div id="start-screen" class="overlay">
+                <div class="overlay-content">
+                    <h2 class="overlay-title">Ready to Play?</h2>
+                    <p class="overlay-text">Use arrow keys or swipe to control the snake</p>
+                    <button id="start-btn" class="game-btn">Start Game</button>
+                </div>
+            </div>
+
+            <div id="game-over-screen" class="overlay hidden">
+                <div class="overlay-content">
+                    <h2 class="overlay-title game-over-title">Game Over!</h2>
+                    <div class="final-score">
+                        <span class="final-score-label">Final Score</span>
+                        <span id="final-score" class="final-score-value">0</span>
+                    </div>
+                    <button id="restart-btn" class="game-btn restart-btn">Play Again</button>
+                </div>
+            </div>
+
+            <div id="pause-screen" class="overlay hidden">
+                <div class="overlay-content">
+                    <h2 class="overlay-title">Paused</h2>
+                    <button id="resume-btn" class="game-btn">Resume</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-toolbar">
+            <div class="toolbar-section">
+                <label for="difficulty">Speed:</label>
+                <select id="difficulty" class="difficulty-select">
+                    <option value="slow">Slow</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="fast">Fast</option>
+                </select>
+            </div>
+            <div class="toolbar-section">
+                <button id="sound-btn" class="icon-btn" title="Toggle Sound">🔊</button>
+                <button id="help-btn" class="icon-btn" title="Help">?</button>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            <div class="keyboard-hint">
+                <span class="key">&uarr;</span>
+                <span class="key">&darr;</span>
+                <span class="key">&larr;</span>
+                <span class="key">&rarr;</span>
+                <span class="hint-text">or WASD to move</span>
+                <span class="hint-divider">|</span>
+                <span class="key">SPACE</span>
+                <span class="hint-text">to pause</span>
+            </div>
+            <div class="mobile-controls">
+                <div class="d-pad">
+                    <button class="d-btn d-up" data-dir="up">&uarr;</button>
+                    <button class="d-btn d-left" data-dir="left">&larr;</button>
+                    <button class="d-btn d-right" data-dir="right">&rarr;</button>
+                    <button class="d-btn d-down" data-dir="down">&darr;</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="help-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>How to Play</h3>
+                <div class="help-section">
+                    <h4>Controls</h4>
+                    <ul>
+                        <li><strong>Arrow Keys</strong> or <strong>WASD</strong> - Move the snake</li>
+                        <li><strong>Space</strong> or <strong>P</strong> - Pause/Resume game</li>
+                        <li><strong>Enter</strong> - Start/Restart game</li>
+                        <li><strong>Swipe</strong> - Change direction on mobile</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h4>Objective</h4>
+                    <p>Eat the red food to grow your snake and earn points. Avoid hitting the walls or your own tail!</p>
+                </div>
+                <div class="help-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>High score saved automatically</li>
+                        <li>Three difficulty levels (Slow/Normal/Fast)</li>
+                        <li>Sound effects (toggle with 🔊 button)</li>
+                        <li>Touch/swipe support for mobile</li>
+                    </ul>
+                </div>
+                <button id="close-help" class="game-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
